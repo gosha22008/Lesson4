@@ -69,14 +69,14 @@ $wind_deg = convert_deg($content1['wind']['deg']);
 <h2>Погода в Лондоне</h2>
 <dl>
     <dt>Температура</dt>
-    <dd><?=$temp_grad?>&#176</dd>
+    <dd><?=$temp_grad?> &#176С</dd>
 </dl><dl>
     <dt>Минимальная температура</dt>
-    <dd><?=$temp_min?>&#176</dd>
+    <dd><?=$temp_min?> &#176С</dd>
 </dl>
 <dl>
     <dt>Максимальная температура</dt>
-    <dd><?=$temp_max?>&#176</dd>
+    <dd><?=$temp_max?> &#176С</dd>
 </dl>
 <dl>
     <dt>Давление</dt>
