@@ -19,7 +19,9 @@
     </style>
 </head>
 <?php
-$url = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=b57497d52bec4a649c3c44fb650ade5f';
+$key = 'b57497d52bec4a649c3c44fb650ade5f';
+$city = 'London,uk';
+$url = "https://api.openweathermap.org/data/2.5/weather?q=$city&APPID=$key";
 if ((!file_exists('text.txt')) or (time() - filemtime('text.txt') > 3600)) {
     $content = file_get_contents("$url");
     file_put_contents('text.txt', $content);
