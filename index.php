@@ -19,21 +19,21 @@
     </style>
 </head>
 <?php
-$key = 'b57497d52bec4a649c3c44fb650ade5f';
+$key = 'APPID=b57497d52bec4a649c3c44fb650ade5f';
+$city = 'London,uk';
+$url = 'https://api.openweathermap.org/data/2.5/weather?q';
 if (!file_exists('text.txt')) {
-    $content = file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=$key");
+    $content = file_get_contents("$url=$city&$key");
     file_put_contents('text.txt', $content);
-    $content1 = [];
     $content1 = json_decode($content, true);
-} else if (file_exists('text.txt')) {
+} else {
     $time1 = time();
     $a = $time1 - filemtime('text.txt');
     if ($a > 3600) {
-        $content = file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=$key");
+        $content = file_get_contents("$url=$city&$key");
         file_put_contents('text.txt', $content);
         $content1 = json_decode($content, true);
-    }
-    else {
+    } else {
         $con = file_get_contents('text.txt');
         $content1 = json_decode($con, true);
     }
